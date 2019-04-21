@@ -32,8 +32,7 @@ public class ProfileFragment extends Fragment {
         // Inflate the layout for this fragment
         final RelativeLayout mRelativeLayout=(RelativeLayout) inflater.inflate(R.layout.fragment_profile, container, false);
 
-        Button button=mRelativeLayout.findViewById(R.id.
-                );
+        Button button=mRelativeLayout.findViewById(R.id.drop_down_option_menu);
 
         button.setOnClickListener(new View.OnClickListener() {
             @Override
