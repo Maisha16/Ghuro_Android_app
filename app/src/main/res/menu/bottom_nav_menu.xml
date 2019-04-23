@@ -8,7 +8,7 @@
         android:title="Search" />
     <item
         android:id="@+id/trips"
-        android:icon="@drawable/ic_directions_car_black_24dp"
+        android:icon="@drawable/trips"
         android:title="Trips" />
     <item
         android:id="@+id/message"
@@ -16,6 +16,7 @@
         android:title="Messages" />
     <item
         android:id="@+id/host"
+        android:icon="@drawable/ic_directions_car_black_24dp"
         android:title="Host" />
     <item
         android:id="@+id/profile"

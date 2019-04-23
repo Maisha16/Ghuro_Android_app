@@ -2,6 +2,7 @@ package bscse.ac.bd.car;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import bscse.ac.bd.car.Fragment.HostFragment;
@@ -17,6 +18,8 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
         final MessageFragment messageFragment=new MessageFragment();
         final TripsFragment tripsFragment=new TripsFragment();
         final HostFragment hostFragment=new HostFragment();
+        toolbar=findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
 
 
         navigationView. setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -72,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     private void setFragment(Fragment fragment)
     {
         FragmentTransaction fragmentTransaction=getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.frame,fragment);
+        fragmentTransaction.replace(R.id.fragment_container,fragment);
         fragmentTransaction.commit();
     }
 }
