@@ -8,30 +8,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/relative">
-
-        <ImageView
-            android:id="@+id/car_pic"
-            android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/car" />
-
-        <SearchView
-            android:layout_width="300dp"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:background="@color/white" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/searchRecylerView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/car_pic"
-            android:layout_marginTop="6dp">
-
-        </androidx.recyclerview.widget.RecyclerView>
+            android:layout_height="wrap_content"/>
 
     </RelativeLayout>
 

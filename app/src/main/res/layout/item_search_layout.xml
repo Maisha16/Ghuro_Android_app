@@ -1,58 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" 
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:padding="8dp">
 
         <ImageView
             android:id="@+id/car_pic"
             android:layout_width="match_parent"
             android:layout_height="210dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/car1" />
+            android:scaleType="centerCrop" />
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/carname"
-                android:text="Honda Accord "
-                android:paddingTop="8dp"
-                android:textSize="30sp"
+                android:text="Honda"
+                android:textSize="24sp"
+                android:fontFamily="sans-serif-medium"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
             <TextView
+                android:id="@+id/carmodel"
+                android:text="Accord"
+                android:paddingLeft="8dp"
+                android:textSize="24sp"
+                android:fontFamily="sans-serif-medium"
+                android:layout_toRightOf="@id/carname"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/price"
-                android:text="131tk"
-                android:textSize="30dp"
-                android:layout_alignParentRight="true"
-                android:paddingRight="10dp"
-                />
+                android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/year"
+                android:id="@+id/caryear"
+                android:text="2008"
+                android:textSize="24sp"
+                android:fontFamily="sans-serif-medium"
+                android:paddingLeft="8dp"
+                android:layout_alignBaseline="@id/carmodel"
+                android:layout_toRightOf="@id/carmodel"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="2018"
-                android:textSize="20dp"
-                android:layout_centerInParent="true"
-                android:paddingLeft="10dp"/>
+                android:layout_height="wrap_content" />
 
 
+            <TextView
+                android:id="@+id/carprice"
+                android:text="TK: 4000"
+                android:textSize="16sp"
+                android:layout_alignParentRight="true"
+                android:fontFamily="sans-serif-medium"
+                android:layout_alignBaseline="@id/carname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
         </RelativeLayout>
+
         <TextView
+            android:id="@+id/trips"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
             android:text="17 Trips"
-            android:textSize="15dp"
-            android:id="@+id/trips"/>
+            android:textSize="16sp" />
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".ScrollingActivity"
+    tools:showIn="@layout/activity_scrolling">
+
+
+    <RelativeLayout
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/carImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/car1" />
+
+        <TextView
+            android:id="@+id/carOwner"
+            android:text="Michell"
+            android:layout_below="@+id/carImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/carname"
+            android:layout_below="@id/carOwner"
+            android:text="Honda"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/carmodel"
+            android:text="Accord"
+            android:layout_alignBaseline="@id/carname"
+            android:layout_toRightOf="@id/carname"
+            android:paddingLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/caryear"
+            android:text="2009"
+            android:paddingLeft="8dp"
+            android:layout_alignBaseline="@id/carname"
+            android:layout_toRightOf="@id/carmodel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/trips"
+            android:text="18 trips"
+            android:layout_below="@id/carname"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:text="TK 4000"
+            android:textSize="32sp"
+            android:layout_alignBaseline="@id/carname"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:text="per day"
+            android:layout_alignBaseline="@id/trips"
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <View
+            android:id="@+id/hr_line1"
+            android:layout_below="@id/trips"
+            android:layout_width="fill_parent"
+            android:layout_height="2dp"
+            android:background="#c0c0c0"/>
+
+        <TextView
+            android:id="@+id/tv_trip_date"
+            android:layout_below="@id/hr_line1"
+            android:text="TRIP DATES"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/calender_ic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_trip_date"
+            android:src="@android:drawable/ic_menu_my_calendar" />
+
+        <TextView
+            android:id="@+id/date_from"
+            android:layout_width="wrap_content"
+            android:layout_height="33dp"
+            android:textColor="#53B667"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/tv_trip_date"
+            android:layout_marginRight="16dp"
+            android:layout_toRightOf="@id/calender_ic"
+            android:text="Mon, April 4" />
+
+        <TextView
+            android:id="@+id/tv_to"
+            android:text=">"
+            android:layout_toRightOf="@id/date_from"
+            android:layout_marginRight="16dp"
+            android:layout_alignBaseline="@id/date_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/date_to"
+            android:text="Sat, April 4"
+            android:textColor="#53B667"
+            android:layout_toRightOf="@id/tv_to"
+            android:layout_alignBaseline="@id/date_from"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+
+    </RelativeLayout>
+
+</androidx.core.widget.NestedScrollView>
