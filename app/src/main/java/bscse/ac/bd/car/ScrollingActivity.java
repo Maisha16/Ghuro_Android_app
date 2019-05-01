@@ -10,6 +10,14 @@ import androidx.appcompat.widget.Toolbar;
 
 import android.view.View;
 
+import java.util.List;
+
+import bscse.ac.bd.car.api.Api;
+import bscse.ac.bd.car.api.CarService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ScrollingActivity extends AppCompatActivity {
 
     @Override
@@ -19,13 +27,19 @@ public class ScrollingActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
+        CarService carService = Api.carService();
+        Call<List<Dummy>> repos = carService.listRepos(1);
+        repos.enqueue(new Callback<List<Dummy>>() {
+            @Override
+            public void onResponse(Call<List<Dummy>> call, Response<List<Dummy>> response) {
+                int i = 0;
+            }
+
+            @Override
+            public void onFailure(Call<List<Dummy>> call, Throwable t) {
+
+            }
+        });
+
     }
 }
