@@ -42,19 +42,7 @@ public class BookingActivity extends AppCompatActivity {
                 endDatePicker();
             }
         });
-//        CarService carService = Api.carService();
-//        Call<List<Dummy>> repos = carService.listRepos(1);
-//        repos.enqueue(new Callback<List<Dummy>>() {
-//            @Override
-//            public void onResponse(Call<List<Dummy>> call, Response<List<Dummy>> response) {
-//                int i = 0;
-//            }
-//
-//            @Override
-//            public void onFailure(Call<List<Dummy>> call, Throwable t) {
-//
-//            }
-//        });
+
 
     }
 

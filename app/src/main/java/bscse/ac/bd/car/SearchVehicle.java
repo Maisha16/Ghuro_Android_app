@@ -6,21 +6,22 @@ import android.os.Parcelable;
 public class SearchVehicle implements Parcelable {
     private String carName;
 
-    public String getCarId() {
+    public int getCarId() {
         return carId;
     }
 
-    public void setCarId(String carId) {
+    public void setCarId(int carId) {
         this.carId = carId;
     }
 
-    private String carId;
+    private int carId;
     private String carModel;
     private String price;
-    private String trips;
+    private int trips;
     private String year;
 
-    public SearchVehicle(String carName, String carModel, String price, String trips, String year) {
+    public SearchVehicle(int carId,int userId,String carName, String carModel, String price, int trips, String year) {
+        this.carId = carId;
         this.carName = carName;
         this.carModel = carModel;
         this.trips = trips;
@@ -32,7 +33,7 @@ public class SearchVehicle implements Parcelable {
         carName = in.readString();
         carModel = in.readString();
         price = in.readString();
-        trips = in.readString();
+        trips = in.readInt();
         year = in.readString();
     }
 
@@ -68,7 +69,7 @@ public class SearchVehicle implements Parcelable {
         return carName;
     }
 
-    public String getTrips() {
+    public int getTrips() {
         return trips;
     }
 
@@ -93,10 +94,10 @@ public class SearchVehicle implements Parcelable {
     }
 
     public void writeToParcel(Parcel out, int flags) {
-        out.writeString(carId);
+        out.writeInt(carId);
         out.writeString(carName);
         out.writeString(carModel);
         out.writeString(year);
-        out.writeString(trips);
+        out.writeInt(trips);
     }
 }

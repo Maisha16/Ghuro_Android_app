@@ -24,8 +24,7 @@
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:layout_alignParentTop="true"
-            android:scaleType="centerCrop"
-            android:src="@drawable/car1" />
+            android:scaleType="centerCrop" />
 
         <TextView
             android:id="@+id/carOwner"

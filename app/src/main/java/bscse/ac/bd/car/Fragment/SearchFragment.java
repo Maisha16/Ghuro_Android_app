@@ -22,6 +22,11 @@ import bscse.ac.bd.car.Adapter.SearchAdapter;
 import bscse.ac.bd.car.BookingActivity;
 import bscse.ac.bd.car.R;
 import bscse.ac.bd.car.SearchVehicle;
+import bscse.ac.bd.car.api.Api;
+import bscse.ac.bd.car.api.CarService;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -40,16 +45,15 @@ public class SearchFragment extends Fragment implements SearchAdapter.OnItemClic
         View v = inflater.inflate(R.layout.fragment_search, container, false);
         final RecyclerView recyclerView =  v.findViewById(R.id.searchRecylerView);
         List<SearchVehicle> vehicles = new ArrayList<>();
-        vehicles.add(new SearchVehicle("Honda", "Accord", "119","17 trips","2018"));
-        vehicles.add(new SearchVehicle("Honda", "CIVIC", "119","17 trips","2018"));
-        vehicles.add(new SearchVehicle("Honda", "CR-V", "119","17 trips","2018"));
-        vehicles.add(new SearchVehicle("Honda", "Type-R", "119","17 trips","2018"));
+        //vehicles.add(new SearchVehicle("Honda", "Accord", "119","17 trips","2018"));
+       //vehicles.add(new SearchVehicle("Honda", "Type-R", "119","17 trips","2018"));
         SearchAdapter searchAdapter = new SearchAdapter(vehicles, this);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         recyclerView.setAdapter(searchAdapter);
 
         return v;
     }
+
 
     @Override
     public void onItemClick(SearchVehicle vehicle) {
@@ -62,5 +66,19 @@ public class SearchFragment extends Fragment implements SearchAdapter.OnItemClic
     public void onResume() {
         super.onResume();
         Objects.requireNonNull(getActivity()).setTitle("Caro");
+
+                CarService carService = Api.carService();
+        Call<List<SearchVehicle>> repos = carService.listCars();
+        repos.enqueue(new Callback<List<SearchVehicle>>() {
+            @Override
+            public void onResponse(Call<List<SearchVehicle>> call, Response<List<SearchVehicle>> response) {
+                int i =0;
+            }
+
+            @Override
+            public void onFailure(Call<List<SearchVehicle>> call, Throwable t) {
+                int i = 0;
+            }
+        });
     }
 }

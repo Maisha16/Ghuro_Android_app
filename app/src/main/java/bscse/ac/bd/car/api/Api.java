@@ -9,7 +9,7 @@ public class Api {
 
     public static CarService carService() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("https://jsonplaceholder.typicode.com/")
+                .baseUrl("http://10.0.2.2/caro/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
