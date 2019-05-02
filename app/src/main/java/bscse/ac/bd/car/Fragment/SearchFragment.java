@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import bscse.ac.bd.car.Adapter.SearchAdapter;
 import bscse.ac.bd.car.R;
@@ -51,5 +52,11 @@ public class SearchFragment extends Fragment implements SearchAdapter.OnItemClic
     @Override
     public void onItemClick(SearchVehicle vehicle) {
         Toast.makeText(getContext(), vehicle.getCarModel(), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Objects.requireNonNull(getActivity()).setTitle("Caro");
     }
 }

@@ -2,166 +2,222 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:padding="8dp">
 
 
     <TextView
-        android:text="Filters"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
         android:fontFamily="serif"
         android:gravity="center"
+        android:text="Filters"
         android:textSize="32sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="48dp" />
+        android:textStyle="bold" />
 
     <View
-        android:background="#E2E2E2"
         android:layout_width="match_parent"
+        android:layout_height="1dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:layout_height="1dp"/>
+        android:background="#E2E2E2" />
 
     <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
         android:text="Delivery"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:textSize="18sp" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:text="Get the car delivered to your home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
-
-
-
-    <View
-        android:background="#E2E2E2"
-        android:layout_width="match_parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_height="1dp"/>
-
-    <TextView
-        android:text="Luxury Class"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
-
-        <TextView
-            android:text="Luxury cars for exclusive business/event "
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-
-        <androidx.appcompat.widget.SwitchCompat
-            android:layout_alignParentEnd="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-    </RelativeLayout>
-
-
-
-    <View
-        android:background="#E2E2E2"
-        android:layout_width="match_parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:layout_height="1dp"/>
-
-
-
-    <TextView
-        android:text="Features"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <GridLayout
-        android:orientation="horizontal"
-        android:columnCount="3"
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get the car delivered to your home" />
 
-        <ImageView
-            android:src="@drawable/bluetooth"
-            android:background="@drawable/border_layout"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#E2E2E2" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Luxury Class"
+        android:textSize="18sp" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Luxury cars for exclusive business/event " />
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#E2E2E2" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Features"
+        android:textSize="18sp" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:columnCount="3"
+        android:orientation="horizontal">
+
+
+        <RelativeLayout
             android:layout_width="0dp"
-            android:layout_columnWeight="1"
+            android:layout_height="wrap_content"
             android:padding="8dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_height="48dp" />
-
-        <ImageView
-            android:src="@drawable/music"
-
-            android:layout_columnWeight="1"
-            android:layout_marginLeft="8dp"
             android:background="@drawable/border_layout"
-            android:layout_marginRight="8dp"
-            android:padding="8dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:layout_width="0dp"
-            android:layout_height="48dp" />
-
-        <ImageView
-            android:src="@drawable/usb"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
-            android:background="@drawable/border_layout"
-            android:padding="8dp"
-            android:clickable="true"
-            android:focusable="true"
             android:layout_columnWeight="1"
-            android:layout_width="0dp"
-            android:layout_height="48dp" />
+            android:layout_marginEnd="8dp">
 
-        <ImageView
+            <ImageView
+                android:id="@+id/im_bt"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_columnWeight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/bluetooth" />
+
+            <TextView
+                android:layout_below="@id/im_bt"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bluetooth" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@drawable/border_layout"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="8dp">
+
+            <ImageView
+                android:id="@+id/im_music"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_columnWeight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/music" />
+
+            <TextView
+                android:layout_below="@id/im_music"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Music Player" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:background="@drawable/border_layout"
+            android:layout_columnWeight="1"
+            android:layout_marginEnd="8dp">
+
+            <ImageView
+                android:id="@+id/im_usb"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_columnWeight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/usb" />
+
+            <TextView
+                android:layout_below="@id/im_usb"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bluetooth" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/gear_auto"
-            android:layout_marginLeft="8dp"
-            android:layout_marginRight="8dp"
             android:background="@drawable/border_layout"
-            android:padding="8dp"
-            android:clickable="true"
-            android:focusable="true"
             android:layout_columnWeight="1"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            />
+            android:layout_marginEnd="8dp">
+
+            <ImageView
+                android:id="@+id/im_gear"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_columnWeight="1"
+                android:clickable="true"
+                android:focusable="true"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/gear_auto" />
+
+            <TextView
+                android:layout_below="@id/im_gear"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Auto Gear" />
+        </RelativeLayout>
+
+
 
     </GridLayout>
 
     <Button
-        android:text="Apply"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="#25B41B"
         android:clickable="false"
         android:focusable="false"
-        android:textColor="@color/white"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:text="Apply"
+        android:textColor="@color/white" />
 </LinearLayout>

@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 
+import java.util.Objects;
+
 import bscse.ac.bd.car.EditActivity;
 import bscse.ac.bd.car.R;
 
@@ -50,5 +52,9 @@ public class ProfileFragment extends Fragment {
     }
 
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+        Objects.requireNonNull(getActivity()).setTitle("Profile");
+    }
 }

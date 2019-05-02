@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.Objects;
+
 import bscse.ac.bd.car.R;
 
 /**
@@ -29,4 +31,9 @@ public class MessageFragment extends Fragment {
         return inflater.inflate(R.layout.fragment_message, container, false);
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Objects.requireNonNull(getActivity()).setTitle("Messages");
+    }
 }

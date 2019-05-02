@@ -17,6 +17,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import bscse.ac.bd.car.Adapter.HostVehicleAdapter;
 import bscse.ac.bd.car.R;
@@ -55,13 +56,7 @@ public class HostFragment extends Fragment {
                     recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
                     recyclerView.setAdapter(hostVehicleAdapter);
                 } else if(tab.getText().toString().equals("Reviews")) {
-//                    List<Vehicle> vehicles = new ArrayList<>();
-//                    vehicles.add(new Vehicle("Pussy"));
-//                    vehicles.add(new Vehicle("Nipplle"));
-//                    vehicles.add(new Vehicle("Vegina"));
-//                    HostVehicleAdapter hostVehicleAdapter = new HostVehicleAdapter(vehicles);
-//                    recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-//                    recyclerView.setAdapter(hostVehicleAdapter);
+
                 }
             }
 
@@ -80,5 +75,10 @@ public class HostFragment extends Fragment {
     }
 
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        Objects.requireNonNull(getActivity()).setTitle("Host");
+    }
 }
 

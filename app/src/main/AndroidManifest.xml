@@ -12,8 +12,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ScrollingActivity"
-            android:label="@string/title_activity_scrolling"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:label="@string/title_activity_scrolling">
 
         </activity>
         <activity android:name=".EditActivity" />
