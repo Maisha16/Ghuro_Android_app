@@ -33,6 +33,7 @@ import retrofit2.Response;
  */
 public class SearchFragment extends Fragment implements SearchAdapter.OnItemClickListener {
 
+    RecyclerView recyclerView;
 
     public SearchFragment() {
         // Required empty public constructor
@@ -43,13 +44,11 @@ public class SearchFragment extends Fragment implements SearchAdapter.OnItemClic
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_search, container, false);
-        final RecyclerView recyclerView =  v.findViewById(R.id.searchRecylerView);
+        recyclerView =  v.findViewById(R.id.searchRecylerView);
         List<SearchVehicle> vehicles = new ArrayList<>();
         //vehicles.add(new SearchVehicle("Honda", "Accord", "119","17 trips","2018"));
        //vehicles.add(new SearchVehicle("Honda", "Type-R", "119","17 trips","2018"));
-        SearchAdapter searchAdapter = new SearchAdapter(vehicles, this);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        recyclerView.setAdapter(searchAdapter);
+
 
         return v;
     }
@@ -72,13 +71,19 @@ public class SearchFragment extends Fragment implements SearchAdapter.OnItemClic
         repos.enqueue(new Callback<List<SearchVehicle>>() {
             @Override
             public void onResponse(Call<List<SearchVehicle>> call, Response<List<SearchVehicle>> response) {
-                int i =0;
+                initList(response.body());
             }
 
             @Override
             public void onFailure(Call<List<SearchVehicle>> call, Throwable t) {
-                int i = 0;
+
             }
         });
+    }
+
+    private void initList(List<SearchVehicle> searchVehicles) {
+        SearchAdapter searchAdapter = new SearchAdapter(searchVehicles, this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(searchAdapter);
     }
 }

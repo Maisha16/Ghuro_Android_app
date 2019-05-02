@@ -35,7 +35,7 @@
     <include layout="@layout/content_scrolling" />
 
     <Button
-        android:id="@+id/my_sticky_button"
+        android:id="@+id/booking_button"
         android:layout_width="match_parent"
         android:layout_height="48dp"
         android:text="@string/confirm_booking"
