@@ -4,95 +4,115 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".ScrollingActivity"
+    android:paddingBottom="48dp"
     tools:showIn="@layout/activity_scrolling">
 
 
     <RelativeLayout
-        android:orientation="vertical"
-        android:padding="16dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:elevation="4dp"
+        android:orientation="vertical"
+        android:padding="8dp">
 
         <ImageView
             android:id="@+id/carImage"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="300dp"
             android:layout_alignParentTop="true"
+            android:scaleType="centerCrop"
             android:src="@drawable/car1" />
 
         <TextView
             android:id="@+id/carOwner"
-            android:text="Michell"
-            android:layout_below="@+id/carImage"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/carImage"
+            android:layout_marginTop="8dp"
+            android:fontFamily="serif"
+            android:textSize="16sp"
+            android:text="Michell" />
 
         <TextView
             android:id="@+id/carname"
-            android:layout_below="@id/carOwner"
-            android:text="Honda"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/carOwner"
+            android:textSize="16sp"
+            android:fontFamily="serif"
+            android:text="Honda" />
 
         <TextView
             android:id="@+id/carmodel"
-            android:text="Accord"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/carname"
             android:layout_toRightOf="@id/carname"
+            android:fontFamily="serif"
             android:paddingLeft="8dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:text="Accord" />
 
         <TextView
             android:id="@+id/caryear"
-            android:text="2009"
-            android:paddingLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
             android:layout_alignBaseline="@id/carname"
             android:layout_toRightOf="@id/carmodel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:fontFamily="serif"
+            android:paddingLeft="8dp"
+            android:text="2009" />
 
         <TextView
             android:id="@+id/trips"
-            android:text="18 trips"
-            android:layout_below="@id/carname"
-            android:layout_marginBottom="8dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/carname"
+            android:textSize="16sp"
+            android:layout_marginBottom="8dp"
+            android:fontFamily="serif"
+            android:text="18 trips" />
 
 
         <TextView
-            android:text="TK 4000"
-            android:textSize="32sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/carname"
             android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:fontFamily="serif"
+            android:text="TK 4000"
+            android:textSize="32sp" />
 
 
         <TextView
-            android:text="per day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_alignBaseline="@id/trips"
             android:layout_alignParentRight="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:text="per day" />
 
         <View
             android:id="@+id/hr_line1"
-            android:layout_below="@id/trips"
             android:layout_width="fill_parent"
-            android:layout_height="2dp"
-            android:background="#c0c0c0"/>
+            android:layout_height="1dp"
+            android:layout_below="@id/trips"
+            android:background="#E7E7E7" />
 
         <TextView
             android:id="@+id/tv_trip_date"
-            android:layout_below="@id/hr_line1"
-            android:text="TRIP DATES"
-            android:layout_marginBottom="8dp"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hr_line1"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:textSize="18sp"
+            android:text="TRIP DATES" />
+
 
         <ImageView
             android:id="@+id/calender_ic"
@@ -105,31 +125,162 @@
             android:id="@+id/date_from"
             android:layout_width="wrap_content"
             android:layout_height="33dp"
-            android:textColor="#53B667"
-            android:gravity="center_vertical"
             android:layout_below="@+id/tv_trip_date"
-            android:layout_marginRight="16dp"
-            android:layout_toRightOf="@id/calender_ic"
-            android:text="Mon, April 4" />
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/calender_ic"
+            android:gravity="center_vertical"
+            android:textSize="16sp"
+            android:text="Mon, April 4"
+            android:textColor="#53B667" />
 
         <TextView
             android:id="@+id/tv_to"
-            android:text=">"
-            android:layout_toRightOf="@id/date_from"
-            android:layout_marginRight="16dp"
-            android:layout_alignBaseline="@id/date_from"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/date_from"
+            android:layout_marginRight="16dp"
+            android:layout_toRightOf="@id/date_from"
+            android:text=">"
+            android:textSize="14sp" />
 
         <TextView
             android:id="@+id/date_to"
-            android:text="Sat, April 4"
-            android:textColor="#53B667"
-            android:layout_toRightOf="@id/tv_to"
-            android:layout_alignBaseline="@id/date_from"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/date_from"
+            android:layout_toRightOf="@id/tv_to"
+            android:text="Sat, April 4"
+            android:textSize="16sp"
+            android:textColor="#53B667" />
 
+
+
+        <View
+            android:id="@+id/hr_line2"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@id/calender_ic"
+            android:background="#E7E7E7" />
+
+
+        <TextView
+            android:id="@+id/textView2"
+            android:textSize="18sp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hr_line2"
+            android:text="PICKUP &amp; RETURN" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_marginTop="2dp"
+            app:srcCompat="@android:drawable/ic_menu_mylocation" />
+
+        <TextView
+            android:id="@+id/tv_pickup_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/imageView"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="7dp"
+            android:textSize="16sp"
+            android:layout_toEndOf="@+id/imageView"
+            android:text="Dhaka, 1208" />
+
+
+
+        <View
+            android:id="@+id/hr_line3"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/imageView"
+            android:background="#E7E7E7" />
+
+        <TextView
+            android:textSize="18sp"
+            android:id="@+id/textView4"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hr_line3"
+            android:layout_alignStart="@+id/hr_line3"
+            android:layout_marginStart="0dp"
+            android:text="DISTANCE INCLUDED" />
+
+        <TextView
+            android:id="@+id/tv_distance_included"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView4"
+            android:layout_marginTop="6dp"
+            android:textSize="16sp"
+            android:text="800km" />
+
+        <View
+            android:id="@+id/hr_line4"
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_below="@id/tv_distance_included"
+            android:background="#E7E7E7" />
+
+
+        <TextView
+            android:textSize="18sp"
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:layout_below="@+id/hr_line4"
+            android:text="FEATURES" />
+
+        <LinearLayout
+            android:layout_below="@id/textView6"
+            android:orientation="horizontal"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:src="@drawable/gear_auto"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+            <ImageView
+                android:src="@drawable/bluetooth"
+                android:layout_width="40dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_height="40dp" />
+
+            <ImageView
+                android:src="@drawable/music"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+            <ImageView
+                android:src="@drawable/usb"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_width="40dp"
+                android:layout_height="40dp" />
+
+        </LinearLayout>
 
     </RelativeLayout>
 

@@ -34,13 +34,15 @@
 
     <include layout="@layout/content_scrolling" />
 
-    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton-->
-        <!--android:id="@+id/fab"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_margin="@dimen/fab_margin"-->
-        <!--app:layout_anchor="@id/app_bar"-->
-        <!--app:layout_anchorGravity="bottom|end"-->
-        <!--app:srcCompat="@android:drawable/ic_input_add" />-->
+    <Button
+        android:id="@+id/my_sticky_button"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:text="@string/confirm_booking"
+        android:background="#25B41B"
+        android:textColor="@color/white"
+        android:fitsSystemWindows="true"
+        android:layout_gravity="center_horizontal|bottom"
+        />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
