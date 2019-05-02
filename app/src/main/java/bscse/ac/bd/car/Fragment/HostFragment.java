@@ -29,6 +29,8 @@ import bscse.ac.bd.car.Vehicle;
 public class HostFragment extends Fragment {
 
 
+    private RecyclerView recyclerView;
+
     public HostFragment() {
         // Required empty public constructor
     }
@@ -40,21 +42,15 @@ public class HostFragment extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_host, container, false);
         TabLayout tabLayout = (TabLayout) v.findViewById(R.id.tabLayout);
-        final RecyclerView recyclerView = (RecyclerView)  v.findViewById(R.id.hostRecylerView);
+        recyclerView = (RecyclerView)  v.findViewById(R.id.hostRecylerView);
 
-
+        showVehicles();
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 if(tab.getText().toString().equals("Vehicle")) {
                     Toast.makeText(getActivity(), "Vehicle", Toast.LENGTH_LONG).show();
-                    List<Vehicle> vehicles = new ArrayList<>();
-                    vehicles.add(new Vehicle("Honda","H08LTR","11 trips","Last trip:Jan 18-Jan 19 "));
-//                    vehicles.add(new Vehicle("Toyota"));
-//                    vehicles.add(new Vehicle("Acura"));
-                    HostVehicleAdapter hostVehicleAdapter = new HostVehicleAdapter(vehicles);
-                    recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-                    recyclerView.setAdapter(hostVehicleAdapter);
+                    showVehicles();
                 } else if(tab.getText().toString().equals("Reviews")) {
 
                 }
@@ -72,6 +68,16 @@ public class HostFragment extends Fragment {
         });
 
         return v;
+    }
+
+    private void showVehicles() {
+        List<Vehicle> vehicles = new ArrayList<>();
+        vehicles.add(new Vehicle("Honda","H08LTR","11 trips","Last trip:Jan 18-Jan 19 "));
+//                    vehicles.add(new Vehicle("Toyota"));
+//                    vehicles.add(new Vehicle("Acura"));
+        HostVehicleAdapter hostVehicleAdapter = new HostVehicleAdapter(vehicles);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setAdapter(hostVehicleAdapter);
     }
 
 

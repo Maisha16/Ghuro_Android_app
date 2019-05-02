@@ -19,22 +19,26 @@ public class SearchVehicle implements Parcelable {
     private String price;
     private int trips;
     private String year;
+    private String carImage;
 
-    public SearchVehicle(int carId,int userId,String carName, String carModel, String price, int trips, String year) {
+    public SearchVehicle(int carId, int userId, String carName, String carModel, String price, int trips, String year, String carImage) {
         this.carId = carId;
         this.carName = carName;
         this.carModel = carModel;
         this.trips = trips;
         this.price = price;
         this.year = year;
+        this.carImage = carImage;
     }
 
     protected SearchVehicle(Parcel in) {
+        carId = in.readInt();
         carName = in.readString();
         carModel = in.readString();
+        year = in.readString();
         price = in.readString();
         trips = in.readInt();
-        year = in.readString();
+        carImage = in.readString();
     }
 
     public static final Creator<SearchVehicle> CREATOR = new Creator<SearchVehicle>() {
@@ -98,6 +102,16 @@ public class SearchVehicle implements Parcelable {
         out.writeString(carName);
         out.writeString(carModel);
         out.writeString(year);
+        out.writeString(price);
         out.writeInt(trips);
+        out.writeString(carImage);
+    }
+
+    public String getCarImage() {
+        return carImage;
+    }
+
+    public void setCarImage(String carImage) {
+        this.carImage = carImage;
     }
 }

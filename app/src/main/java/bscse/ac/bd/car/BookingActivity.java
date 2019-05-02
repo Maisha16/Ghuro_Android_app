@@ -14,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+
 import java.util.Calendar;
 
 public class BookingActivity extends AppCompatActivity {
@@ -42,6 +44,7 @@ public class BookingActivity extends AppCompatActivity {
         carName = findViewById(R.id.carname);
         carModel = findViewById(R.id.carmodel);
         carYear = findViewById(R.id.caryear);
+        carPrice = findViewById(R.id.tvcarprice);
         carTrips = findViewById(R.id.trips);
         imageView = findViewById(R.id.carImage);
         booked = findViewById(R.id.booking_button);
@@ -81,8 +84,12 @@ public class BookingActivity extends AppCompatActivity {
         carName.setText(vehicle.getCarName());
         carYear.setText(vehicle.getYear());
         carModel.setText(vehicle.getCarModel());
-        carTrips.setText(vehicle.getTrips());
+        //carTrips.setText(vehicle.getTrips());
         carPrice.setText(vehicle.getPrice());
+        Glide.with(getApplicationContext())
+                .load(vehicle.getCarImage())
+                .centerCrop()
+        .into(imageView);
     }
 
     private void startDatePicker() {

@@ -15,7 +15,7 @@
             android:layout_height="100dp"
             android:layout_centerVertical="true"
             android:scaleType="centerCrop"
-            android:src="@drawable/profile_circular_border_imageview" />
+            android:src="@drawable/car22" />
 
         <LinearLayout
             android:layout_toEndOf="@id/list_image_view"

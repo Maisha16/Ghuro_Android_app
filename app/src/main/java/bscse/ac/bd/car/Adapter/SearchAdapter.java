@@ -39,10 +39,10 @@ public class SearchAdapter extends RecyclerView.Adapter<SearchAdapter.SearchView
         holder.carNum.setText(vehicle.getCarName());
         holder.carModel.setText(vehicle.getCarModel());
         holder.Year.setText(vehicle.getYear());
-        holder.Trips.setText(vehicle.getTrips());
+//        holder.Trips.setText(vehicle.getTrips());
         holder.carPrice.setText(vehicle.getPrice());
         Glide.with(holder.itemView.getContext())
-                .load(R.drawable.car1)
+                .load(vehicle.getCarImage())
                 .override(1024, 640)
                 .into(holder.Image);
     }
