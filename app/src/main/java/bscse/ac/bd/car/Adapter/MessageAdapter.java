@@ -20,6 +20,7 @@ import bscse.ac.bd.car.SearchVehicle;
 public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageViewHolder> {
     private List<Messages> messages;
     private OnItemClickListener onItemClickListener;
+
     public MessageAdapter(List<Messages> messages,
                          OnItemClickListener onItemClickListener) {
         this.messages = messages;
@@ -36,19 +37,19 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
     @Override
     public void onBindViewHolder(@NonNull MessageViewHolder holder, int position) {
-        Messages message = messages.get(position);
-        holder.name.setText(message.getName());
-        holder.msg.setText(message.getMessage());
-
-        Glide.with(holder.itemView.getContext())
-                .load(R.drawable.car1)
-                .override(1024, 640)
-                .into(holder.Image);
+//        Messages message = messages.get(0);
+//        holder.name.setText(message.getName());
+//        holder.msg.setText(message.getMessage());
+//
+//        Glide.with(holder.itemView.getContext())
+//                .load(R.drawable.car1)
+//                .override(1024, 640)
+//                .into(holder.Image);
     }
 
     @Override
     public int getItemCount() {
-        return this.messages.size();
+        return 10;
     }
 
 

@@ -3,26 +3,18 @@ package bscse.ac.bd.car;
 import android.app.DatePickerDialog;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import android.os.Parcelable;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Calendar;
-import java.util.List;
 
-import bscse.ac.bd.car.api.Api;
-import bscse.ac.bd.car.api.CarService;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
-
-public class ScrollingActivity extends AppCompatActivity {
+public class BookingActivity extends AppCompatActivity {
 
 
     private TextView startDate;
@@ -66,14 +58,21 @@ public class ScrollingActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        SearchVehicle vehicle = getIntent().getParcelableExtra("vehicle");
+        Toast.makeText(getApplicationContext(), vehicle.getCarModel(), Toast.LENGTH_LONG).show();
+    }
+
     private void startDatePicker(){
-        new DatePickerDialog(ScrollingActivity.this, onStartDatePicked(), myCalendar
+        new DatePickerDialog(BookingActivity.this, onStartDatePicked(), myCalendar
                 .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                 myCalendar.get(Calendar.DAY_OF_MONTH)).show();
     }
 
     private void endDatePicker(){
-        new DatePickerDialog(ScrollingActivity.this, onEndDatePicked(), myCalendar
+        new DatePickerDialog(BookingActivity.this, onEndDatePicked(), myCalendar
                 .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                 myCalendar.get(Calendar.DAY_OF_MONTH)).show();
     }

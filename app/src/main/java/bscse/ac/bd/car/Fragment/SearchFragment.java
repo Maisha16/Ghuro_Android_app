@@ -1,6 +1,7 @@
 package bscse.ac.bd.car.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import java.util.List;
 import java.util.Objects;
 
 import bscse.ac.bd.car.Adapter.SearchAdapter;
+import bscse.ac.bd.car.BookingActivity;
 import bscse.ac.bd.car.R;
 import bscse.ac.bd.car.SearchVehicle;
 
@@ -51,7 +53,9 @@ public class SearchFragment extends Fragment implements SearchAdapter.OnItemClic
 
     @Override
     public void onItemClick(SearchVehicle vehicle) {
-        Toast.makeText(getContext(), vehicle.getCarModel(), Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(getActivity(), BookingActivity.class);
+        intent.putExtra("vehicle", vehicle);
+        startActivity(intent);
     }
 
     @Override
